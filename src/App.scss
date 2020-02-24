@@ -6,15 +6,18 @@ $color-bg: #282c34;
   
 	.App-header {
 	  background-color: $color-bg;
-	  
 	  margin-bottom: 20px;
+
+	  display: flex;
+	flex-flow: row nowrap;
+		  justify-content: flex-start;
 	  
 	  > div {
 		  display: flex;
 		  flex-flow: row nowrap;
 		  justify-content: flex-start;
 		  align-items: center;
-		  max-width: 640px;
+		  //max-width: 640px;
 		  margin: 0 auto;
 		  width: 100%;
 	  }
@@ -40,13 +43,26 @@ $color-bg: #282c34;
 		  height: 10vmin;
 		  padding: 10px 0;
 	  }
+
+	  .App-nav {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		  ul {
+			  display: flex;
+			  li {
+				  list-style-type: none;
+				  margin-right: 20px;
+
+				  a {
+					  color: rgb(112, 76, 182);
+					  //text-decoration: none;
+				  }
+			  }
+		  }
+	  }
   }
-  
-  // @media (prefers-reduced-motion: no-preference) {
-  //   .App-logo {
-  //     animation: App-logo-spin infinite 20s linear;
-  //   }
-  // }
   
   .App-header {
 	background-color: #282c34;

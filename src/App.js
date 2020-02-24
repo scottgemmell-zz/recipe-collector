@@ -13,6 +13,13 @@ function App() {
 					Recipes Collector
 				</h1>
 			</div>
+			<nav className="App-nav">
+				<ul>
+					<li><a href="">List</a></li>
+					<li><a href="">Collection</a></li>
+					<li><a href="">Counter</a></li>
+				</ul>
+			</nav>
 		</header>
         <CounterPage />
     </div>
