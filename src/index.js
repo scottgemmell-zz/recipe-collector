@@ -1,15 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import './App.scss';
 import store from './store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
+import ListPage from './pages/ListPage';
+import SiteHeader from './common/SiteHeader';
+import ExamplePage from './pages/ExamplePage';
+import CollectionPage from './pages/CollectionPage';
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+	<Provider store={store}>
+		<Router>
+			<div className="App">
+				<SiteHeader />
+				<Switch>
+					<Route path="/list/">
+						<ListPage />
+					</Route>
+					<Route path="/collection/">
+						<CollectionPage />
+					</Route>
+					<Route path="/example/">
+						<ExamplePage />
+					</Route>
+					<Route path="/">
+						<ListPage />
+					</Route>
+				</Switch>
+			</div>
+		</Router>
+	</Provider>,
   document.getElementById('root')
 );
 

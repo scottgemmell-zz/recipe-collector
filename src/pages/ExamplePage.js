@@ -4,6 +4,9 @@ import { Counter } from '../features/counter/Counter';
 export default function CounterPage() {
 	return (
 		<div>
+			<h1>
+			Example
+		</h1>
 			<Counter />
         <p>
           Edit <code>src/App.js</code> and save to reload.
