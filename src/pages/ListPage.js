@@ -11,8 +11,9 @@ const ListPage = () => {
 			.then(res => res.json())
 			.then(data => {
 				setRecipeResource(data.recipes);
-				setIsLoading(false);
+				setIsLoading(false)
 		})
+		.catch(err => console.log(err));
 		// return () => {
 		// 	cleanup
 		// };

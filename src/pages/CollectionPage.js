@@ -1,13 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import RecipesList from "../common/RecipesList";
 
-function ListPage() {
+const CollectionPage = () => {
+
+	const [recipeResource, setRecipeResource] = useState([]);
+	const [isLoading, setIsLoading] = useState(true);
+
+	useEffect(() => {
+		fetch("https://api.spoonacular.com/recipes/informationBulk?ids=716367,715568&apiKey=3fcd89c737204c9d9e588415088e7b96")
+			.then(res => res.json())
+			.then(data => {
+				setRecipeResource(data);
+				setIsLoading(false)
+		})
+		.catch(err => console.log(err));
+		// return () => {
+		// 	cleanup
+		// };
+	}, []);
+
   return (
-    <div>
-		<h1>
-			Collection
-		</h1>
+    <div className="App-main">
+		<div className="App-inner">
+			<h1>
+				My Collection
+			</h1>
+			
+			{isLoading && <div>Loading...</div>}
+
+			{/* {recipeResource.length === 0 && <div></div>} */}
+
+			<RecipesList 
+				list={recipeResource} 
+			/>
+		</div>
     </div>
   );
 }
 
-export default ListPage;
+export default CollectionPage;
