@@ -7,13 +7,15 @@ const CollectionPage = () => {
 	const [isLoading, setIsLoading] = useState(true);
 
 	useEffect(() => {
-		fetch("https://api.spoonacular.com/recipes/informationBulk?ids=716367,715568&apiKey=3fcd89c737204c9d9e588415088e7b96")
+		fetch("https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772")
+		// data
+		//fetch("https://api.spoonacular.com/recipes/informationBulk?ids=716367,715568&apiKey=91b3e1d90c3745ed8f818cef3f0f4070")
 			.then(res => res.json())
 			.then(data => {
-				setRecipeResource(data);
-				setIsLoading(false)
-		})
-		.catch(err => console.log(err));
+				setRecipeResource(data.meals);
+				setIsLoading(false);
+			})
+			.catch(err => console.log(err));
 		// return () => {
 		// 	cleanup
 		// };
@@ -28,11 +30,9 @@ const CollectionPage = () => {
 			
 			{isLoading && <div>Loading...</div>}
 
-			{/* {recipeResource.length === 0 && <div></div>} */}
-
-			<RecipesList 
+			{recipeResource && <RecipesList 
 				list={recipeResource} 
-			/>
+			/>}
 		</div>
     </div>
   );
