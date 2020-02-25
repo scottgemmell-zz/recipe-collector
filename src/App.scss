@@ -4,7 +4,6 @@ $breakpoints: (
   'large':  1200px
 ) !default;
 
-
 $color-bg: #282c34;
 
 @mixin respond-to($breakpoint) {
@@ -160,6 +159,8 @@ body {
   }
   
   .App-main {
+	  padding-bottom: 60px;
+
 	  .App-inner {
 		  max-width: 800px;
 		  margin: 0 auto;

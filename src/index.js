@@ -9,6 +9,7 @@ import ListPage from './pages/ListPage';
 import SiteHeader from './common/SiteHeader';
 import ExamplePage from './pages/ExamplePage';
 import CollectionPage from './pages/CollectionPage';
+import ItemPage from './pages/ItemPage';
 
 ReactDOM.render(
 	<Provider store={store}>
@@ -24,6 +25,9 @@ ReactDOM.render(
 					</Route>
 					<Route path="/example/">
 						<ExamplePage />
+					</Route>
+					<Route path={"/item/:id"}>
+						<ItemPage />
 					</Route>
 					<Route path={["/", "/list/"]}>
 						<ListPage />

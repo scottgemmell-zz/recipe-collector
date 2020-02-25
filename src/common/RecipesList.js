@@ -1,11 +1,11 @@
 import React from 'react';
-import RecipesItem from "./RecipesItem";
+import RecipesThumb from "./RecipesThumb";
 
 function RecipesList({ list }) {
   return (
     <div>
 		<ul className="list">
-			{list.map((item, idx) => <RecipesItem key={idx} {...item} />)}
+			{list.map((item, idx) => <RecipesThumb key={idx} {...item} />)}
 		</ul>
     </div>
   );

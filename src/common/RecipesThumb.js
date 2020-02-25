@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-function RecipesItem({ image, title }) {
+function RecipesItem({ id, image, title }) {
   return (
     <React.Fragment>
 		<li className="thumb">
@@ -11,7 +11,7 @@ function RecipesItem({ image, title }) {
 				// width={140} 
 				// height={90} 
 				alt={title} 
-			/> <span className="thumb__meta"><Link to="/">{title}</Link></span>
+			/> <span className="thumb__meta"><Link to={`/item/${id}/`}>{title}</Link></span>
 		</li>
 	</React.Fragment>
   );
