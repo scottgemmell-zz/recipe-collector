@@ -9,7 +9,7 @@ export default function SiteHeader() {
 				<div className="App-logo">
 					<img src={logo} alt="logo" />
 					<h1>
-						Recipes Collector
+						<Link to="/">Recipes Collector</Link>
 					</h1>
 				</div>
 				<nav className="App-nav">

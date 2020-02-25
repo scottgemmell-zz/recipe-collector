@@ -57,7 +57,11 @@ body {
 			align-items: center;
 			//max-width: 640px;
 			margin: 0 auto;
-			width: 100%;
+			width: 100%; 
+
+			a {
+				text-decoration: none;
+			}
 		}
 	
 			> a {
