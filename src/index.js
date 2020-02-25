@@ -16,16 +16,16 @@ ReactDOM.render(
 			<div className="App">
 				<SiteHeader />
 				<Switch>
-					<Route path="/list/">
+					{/* <Route path="/list/">
 						<ListPage />
-					</Route>
+					</Route> */}
 					<Route path="/collection/">
 						<CollectionPage />
 					</Route>
 					<Route path="/example/">
 						<ExamplePage />
 					</Route>
-					<Route path="/">
+					<Route path={["/", "/list/"]}>
 						<ListPage />
 					</Route>
 				</Switch>
