@@ -19,18 +19,20 @@ const ListPage = () => {
 	}, []);
 
   return (
-    <div className="App">
-		<h1>
-			List
-		</h1>
-		
-		{isLoading && <div>Loading...</div>}
+    <div className="App-main">
+		<div className="App-inner">
+			<h1>
+				Random
+			</h1>
+			
+			{isLoading && <div>Loading...</div>}
 
-		{/* {recipeResource.length === 0 && <div></div>} */}
+			{/* {recipeResource.length === 0 && <div></div>} */}
 
-		<RecipesList 
-			list={recipeResource} 
-		/>
+			<RecipesList 
+				list={recipeResource} 
+			/>
+		</div>
     </div>
   );
 }
