@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from 'react-redux';
+import {
+	addItem
+} from '../features/collection/collectionSlice';
 import RecipesList from "../common/RecipesList";
 
 const ListPage = () => {
 
+	const dispatch = useDispatch();
 	const [recipeResource, setRecipeResource] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
 
@@ -21,6 +26,11 @@ const ListPage = () => {
 		// };
 	}, []);
 
+	const handleAdd = (e) => {
+		console.log("handleAdd", e);
+		dispatch(addItem(e.addId));
+	}
+
   return (
     <div className="App-main">
 		<div className="App-inner">
@@ -32,6 +42,7 @@ const ListPage = () => {
 
 			{recipeResource && <RecipesList 
 				list={recipeResource} 
+				handleAdd={handleAdd}
 			/>}
 		</div>
     </div>

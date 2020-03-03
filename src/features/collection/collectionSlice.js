@@ -6,7 +6,11 @@ export const slice = createSlice({
     value: [52772, 52773, 52776],
   },
   reducers: {
-    removeItem: (state, action) => {
+    addItem: (state, action) => {
+		// console.log({ a: state.value, b: +action.payload });
+    	state.value.push(+action.payload);
+	},
+	removeItem: (state, action) => {
 		// console.log({ a: state.value, b: +action.payload });
     	state.value = state.value.filter(item => item !== +action.payload);
     },
@@ -20,6 +24,6 @@ export const slice = createSlice({
 });
 
 export const selectCollection = state => state.collection.value;
-export const { removeItem } = slice.actions;
+export const { addItem, removeItem } = slice.actions;
 
 export default slice.reducer;
