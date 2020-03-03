@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 // { title, image }
-function RecipesItem({ idMeal, strMealThumb, strMeal }) {
+function RecipesItem({ idMeal, handleRemove, strMealThumb, strMeal }) {
   return (
     <React.Fragment>
 		<li className="thumb">
@@ -13,6 +13,8 @@ function RecipesItem({ idMeal, strMealThumb, strMeal }) {
 				// height={90} 
 				alt={strMeal} 
 			/> <span className="thumb__meta"><Link to={`/item/${idMeal}/`}>{strMeal}</Link></span>
+			<br/>
+			<span onClick={() => handleRemove({ removeId: idMeal })}>Remove</span>
 		</li>
 	</React.Fragment>
   );

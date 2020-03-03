@@ -8,7 +8,7 @@ import * as serviceWorker from './serviceWorker';
 import ListPage from './pages/ListPage';
 import SiteHeader from './common/SiteHeader';
 import ExamplePage from './pages/ExamplePage';
-import CollectionPage from './pages/CollectionPage';
+import Collection from './features/collection/Collection';
 import ItemPage from './pages/ItemPage';
 
 ReactDOM.render(
@@ -21,7 +21,7 @@ ReactDOM.render(
 						<ListPage />
 					</Route> */}
 					<Route path="/collection/">
-						<CollectionPage />
+						<Collection />
 					</Route>
 					<Route path="/example/">
 						<ExamplePage />
