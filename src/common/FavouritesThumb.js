@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectFavourites, toggleFavourite } from "../features/favourites/favouritesSlice";
 import { Link } from "react-router-dom";
-import { FaHeart, FaRegHeart } from 'react-icons/fa';
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { Spinner } from "../common";
 
 const FavouritesThumb = ({ idx }) => {

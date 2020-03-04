@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import RecipesThumb from "./RecipesThumb";
 
 const FavouritesList = ({ handleFavourite, isLoading, list, myFavourites }) => {

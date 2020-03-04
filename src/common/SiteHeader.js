@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectFavourites } from "../features/favourites/favouritesSlice";
-import { FaHeart } from 'react-icons/fa';
+import { FaHeart } from "react-icons/fa";
 import logo from '../logo.svg';
 
 export default function SiteHeader() {

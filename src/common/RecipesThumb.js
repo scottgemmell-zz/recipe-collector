@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
-import { FaHeart, FaRegHeart } from 'react-icons/fa';
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { Spinner } from "../common";
 
 const RecipesThumb = ({ idMeal, isFav, isLoading, strMealThumb, strMeal, handleFavourite }) => {
