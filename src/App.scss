@@ -47,7 +47,14 @@ body {
 	  monospace;
   }
   
+  dt {
+	  font-weight: bold;
+	  margin-bottom: 5px;
+  }
 
+  dd {
+	  margin-bottom: 10px;
+  }
   
   
   .App {
@@ -215,5 +222,21 @@ body {
 		  max-width: 800px;
 		  margin: 0 auto;
 		  padding: 10px;
+	  }
+  }
+
+  .item {
+		display: flex;
+		align-items: flex-start;
+
+		.item__thumb {
+			border: 5px solid #fff;
+		margin-top: 20px;
+		margin-left: 20px;
+		margin-bottom: 20px;
+		}
+
+	  .item__meta {
+		  margin-left: 20px;
 	  }
   }

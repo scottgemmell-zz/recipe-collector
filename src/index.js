@@ -24,7 +24,7 @@ ReactDOM.render(
 					<Route path="/example/">
 						<ExamplePage />
 					</Route>
-					<Route path={"/item/:id"}>
+					<Route path={"/recipe/:mealId/"}>
 						<ItemPage />
 					</Route>
 					<Route path={["/", "/list/"]}>

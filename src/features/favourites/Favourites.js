@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectFavourites, toggleFavourite } from "./favouritesSlice";
-import { FavouritesList, Spinner } from "../../common/";
+import { FavouritesList } from "../../common/";
 
 const fetchByMealId = mealId => fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
 	.then(res => res.json())
@@ -17,7 +17,7 @@ const Favourites = () => {
   	const dispatch = useDispatch();
 	const [recipeResource, setRecipeResource] = useState([]);
 	//const [isLoading, setIsLoading] = useState(true);
-
+	
 	useEffect(() => {
 		//console.log("STARTUP");
 		Promise

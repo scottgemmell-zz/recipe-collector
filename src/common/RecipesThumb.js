@@ -8,8 +8,8 @@ const RecipesThumb = ({ idMeal, isFav, isLoading, strMealThumb, strMeal, handleF
   return (
     <React.Fragment>
 		{isLoading 
-			&& <Spinner /> 
-			|| <li className="thumb">
+			? <Spinner /> 
+			: <li className="thumb">
 				<img 
 					className="thumb__img" 
 					src={strMealThumb} 
@@ -18,7 +18,7 @@ const RecipesThumb = ({ idMeal, isFav, isLoading, strMealThumb, strMeal, handleF
 					alt={strMeal} 
 				/> 
 				<span className="thumb__meta">
-					<Link className="thumb__title" to={`/item/${idMeal}/`}>
+					<Link className="thumb__title" to={`/recipe/${idMeal}/`}>
 						{strMeal}
 					</Link> 
 					<button className="thumb__toggle" onClick={() => handleFavourite({ idMeal })}>
