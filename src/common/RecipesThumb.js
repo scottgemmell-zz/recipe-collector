@@ -2,10 +2,12 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 
-// { title, image }
-function RecipesItem({ idMeal, isFav, strMealThumb, strMeal, handleFavourite }) {
+const RecipesItem = ({ idMeal, isFav, isLoading, strMealThumb, strMeal, handleFavourite }) => {
+
   return (
     <React.Fragment>
+		{isLoading && <li>Loading...</li>}
+
 		<li className="thumb">
 			<img 
 				className="thumb__img" 

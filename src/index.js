@@ -5,11 +5,9 @@ import './App.scss';
 import store from './store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
-import ListPage from './pages/ListPage';
+import { ExamplePage, ItemPage, ListPage } from './pages/';
 import SiteHeader from './common/SiteHeader';
-import ExamplePage from './pages/ExamplePage';
 import Favourites from './features/favourites/Favourites';
-import ItemPage from './pages/ItemPage';
 
 ReactDOM.render(
 	<Provider store={store}>

@@ -4,7 +4,7 @@ import {
 	toggleFavourite,
 	selectFavourites,
 } from '../features/favourites/favouritesSlice';
-import RecipesList from "../common/RecipesList";
+import { RecipesList, Spinner } from "../common/";
 
 const ListPage = () => {
 
@@ -40,7 +40,7 @@ const ListPage = () => {
 				Random
 			</h1>
 			
-			{isLoading && <div>Loading...</div>}
+			{isLoading && <Spinner />}
 
 			{recipeResource && <RecipesList 
 				list={recipeResource} 
