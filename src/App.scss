@@ -230,13 +230,16 @@ body {
 		align-items: flex-start;
 
 		.item__thumb {
-			border: 5px solid #fff;
+			img {
+				border: 5px solid #fff;
 		margin-top: 20px;
-		margin-left: 20px;
-		margin-bottom: 20px;
+		margin-left: 0;
+		// margin-bottom: 20px;
+			}
 		}
 
 	  .item__meta {
 		  margin-left: 20px;
+		  margin-right: 20px;
 	  }
   }

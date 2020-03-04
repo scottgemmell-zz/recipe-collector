@@ -20,7 +20,6 @@ const ItemPage = () => {
 	const [isLoading, setIsLoading] = useState(true);
 
 	let { mealId } = useParams();
-	console.log({ mealId: +mealId });
 
 	useEffect(() => {
 		//console.log("STARTUP");
@@ -33,7 +32,14 @@ const ItemPage = () => {
 		})
 	}, [myFavourites]);
 
-	console.log('recipeResource', recipeResource[0])
+	const handleFavourite = e => {
+		//console.log("handleFavourite", e);
+		dispatch(toggleFavourite(e.idMeal));
+	}
+
+	//console.log('recipeResource', recipeResource[0].idMeal)
+
+	const isFav = recipeResource[0] && myFavourites.includes(+recipeResource[0].idMeal);
 
 	return (
 		<div className="App-main">
@@ -72,6 +78,9 @@ const ItemPage = () => {
 					</div>
 					<div className="item__thumb">
 						<img src={recipeResource[0].strMealThumb} height={300} width={300} alt=""/>
+						<p>
+							<button onClick={() => handleFavourite({ idMeal: +recipeResource[0].idMeal })}>{!isFav ? " Add to" : " Remove from"} favourites </button>
+						</p>
 					</div>
 				</div>}
 			</div>
