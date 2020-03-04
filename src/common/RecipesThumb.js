@@ -12,10 +12,14 @@ function RecipesItem({ idMeal, handleAdd, handleRemove, strMealThumb, strMeal })
 				// width={140} 
 				// height={90} 
 				alt={strMeal} 
-			/> <span className="thumb__meta"><Link to={`/item/${idMeal}/`}>{strMeal}</Link></span>
-			<br/>
-			<span onClick={() => handleAdd({ addId: idMeal })}>Add</span>
-			<span onClick={() => handleRemove({ removeId: idMeal })}>Remove</span>
+			/> 
+			<span className="thumb__meta">
+				<Link to={`/item/${idMeal}/`}>{strMeal}</Link> 
+				<span>
+					<button onClick={() => handleAdd({ addId: idMeal })}>+ Add</button> 
+					<button onClick={() => handleRemove({ removeId: idMeal })}>Remove</button>
+				</span>
+			</span>
 		</li>
 	</React.Fragment>
   );
