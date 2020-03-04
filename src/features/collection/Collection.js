@@ -14,7 +14,7 @@ const fetchFavouriteMeals = meals => meals.map(mealId => fetchByMealId(mealId));
 
 const Collection = () => {
 
-	const collection = useSelector(selectCollection);
+	const myFavourites = useSelector(selectCollection);
   	const dispatch = useDispatch();
 
 	const [recipeResource, setRecipeResource] = useState([]);
@@ -28,13 +28,13 @@ const Collection = () => {
 	useEffect(() => {
 		//console.log("STARTUP");
 		Promise
-		.all(fetchFavouriteMeals(collection))
+		.all(fetchFavouriteMeals(myFavourites))
 		.then(data => {
 			//console.log("DATA", data)
 			setRecipeResource(data);
 			setIsLoading(false)
 		})
-	}, [collection]);
+	}, [myFavourites]);
 
   return (
     <div className="App-main">
@@ -48,7 +48,7 @@ const Collection = () => {
 			{recipeResource && <RecipesList 
 				list={recipeResource} 
 				handleRemove={handleRemove}
-				collection={collection}
+				myFavourites={myFavourites}
 			/>}
 		</div>
     </div>

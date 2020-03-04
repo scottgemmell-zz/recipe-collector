@@ -14,12 +14,6 @@ export const slice = createSlice({
 		// console.log({ a: state.value, b: +action.payload });
     	state.value = state.value.filter(item => item !== +action.payload);
     },
-    // decrement: state => {
-    //   state.value -= 1;
-    // },
-    // incrementByAmount: (state, action) => {
-    //   state.value += action.payload.amount;
-    // },
   },
 });
 

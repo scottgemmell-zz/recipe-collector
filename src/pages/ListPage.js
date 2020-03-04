@@ -8,7 +8,7 @@ import RecipesList from "../common/RecipesList";
 
 const ListPage = () => {
 
-	const collection = useSelector(selectCollection);
+	const myFavourites = useSelector(selectCollection);
 	const dispatch = useDispatch();
 	const [recipeResource, setRecipeResource] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
@@ -28,7 +28,7 @@ const ListPage = () => {
 		// };
 	}, []);
 
-	const handleAdd = (e) => {
+	const handleAdd = e => {
 		console.log("handleAdd", e);
 		dispatch(addItem(e.addId));
 	}
@@ -45,7 +45,7 @@ const ListPage = () => {
 			{recipeResource && <RecipesList 
 				list={recipeResource} 
 				handleAdd={handleAdd}
-				collection={collection}
+				myFavourites={myFavourites}
 			/>}
 		</div>
     </div>
