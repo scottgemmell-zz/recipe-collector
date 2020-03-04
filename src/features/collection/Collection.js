@@ -48,6 +48,7 @@ const Collection = () => {
 			{recipeResource && <RecipesList 
 				list={recipeResource} 
 				handleRemove={handleRemove}
+				collection={collection}
 			/>}
 		</div>
     </div>

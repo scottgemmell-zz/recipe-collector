@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import {
-	addItem
+	addItem,
+	selectCollection,
 } from '../features/collection/collectionSlice';
 import RecipesList from "../common/RecipesList";
 
 const ListPage = () => {
 
+	const collection = useSelector(selectCollection);
 	const dispatch = useDispatch();
 	const [recipeResource, setRecipeResource] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
@@ -43,6 +45,7 @@ const ListPage = () => {
 			{recipeResource && <RecipesList 
 				list={recipeResource} 
 				handleAdd={handleAdd}
+				collection={collection}
 			/>}
 		</div>
     </div>
