@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import {
-	removeItem,
+	toggleFavourite,
   	selectCollection,
 } from './collectionSlice';
 import RecipesList from "../../common/RecipesList";
@@ -20,9 +20,9 @@ const Collection = () => {
 	const [recipeResource, setRecipeResource] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
 
-	const handleRemove = (e) => {
-		console.log("handleRemove", e);
-		dispatch(removeItem(e.removeId));
+	const handleFavourite = e => {
+		//console.log("handleFavourite", e);
+		dispatch(toggleFavourite(e.idMeal));
 	}
 
 	useEffect(() => {
@@ -47,7 +47,7 @@ const Collection = () => {
 
 			{recipeResource && <RecipesList 
 				list={recipeResource} 
-				handleRemove={handleRemove}
+				handleFavourite={handleFavourite}
 				myFavourites={myFavourites}
 			/>}
 		</div>

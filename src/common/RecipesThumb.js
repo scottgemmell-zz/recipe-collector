@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 
 // { title, image }
-function RecipesItem({ idMeal, isFav, handleAdd, handleRemove, strMealThumb, strMeal }) {
+function RecipesItem({ idMeal, isFav, strMealThumb, strMeal, handleFavourite }) {
   return (
     <React.Fragment>
 		<li className="thumb">
@@ -16,12 +16,9 @@ function RecipesItem({ idMeal, isFav, handleAdd, handleRemove, strMealThumb, str
 			/> 
 			<span className="thumb__meta">
 				<Link className="thumb__title" to={`/item/${idMeal}/`}>{strMeal}</Link> 
-				<button className="thumb__add" onClick={() => handleAdd({ addId: idMeal })}>
+				<button className="thumb__add" onClick={() => handleFavourite({ idMeal })}>
   					{isFav ? <FaHeart /> : <FaRegHeart />} <span className="u-visually-hidden">Add</span>
 				</button> 
-				{/* <button className="thumb__remove" onClick={() => handleRemove({ removeId: idMeal })}>
-					x <span className="u-visually-hidden">Remove</span>
-				</button> */}
 			</span>
 		</li>
 	</React.Fragment>

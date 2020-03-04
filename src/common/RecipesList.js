@@ -1,15 +1,14 @@
 import React from 'react';
 import RecipesThumb from "./RecipesThumb";
 
-function RecipesList({ myFavourites, list, handleAdd, handleRemove }) {
+function RecipesList({ myFavourites, list, handleFavourite }) {
 	return (
 		<ul className="list">
 			{list.map((item, idx) => (<RecipesThumb 
 				key={idx} 
 				{...item} 
 				isFav={myFavourites.includes(+item.idMeal)}
-				handleAdd={handleAdd} 
-				handleRemove={handleRemove} 
+				handleFavourite={handleFavourite} 
 			/>)
 			)}
 		</ul>

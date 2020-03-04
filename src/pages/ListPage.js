@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import {
-	addItem,
+	toggleFavourite,
 	selectCollection,
 } from '../features/collection/collectionSlice';
 import RecipesList from "../common/RecipesList";
@@ -28,9 +28,9 @@ const ListPage = () => {
 		// };
 	}, []);
 
-	const handleAdd = e => {
-		console.log("handleAdd", e);
-		dispatch(addItem(e.addId));
+	const handleFavourite = e => {
+		//console.log("handleFavourite", e);
+		dispatch(toggleFavourite(e.idMeal));
 	}
 
   return (
@@ -44,7 +44,7 @@ const ListPage = () => {
 
 			{recipeResource && <RecipesList 
 				list={recipeResource} 
-				handleAdd={handleAdd}
+				handleFavourite={handleFavourite}
 				myFavourites={myFavourites}
 			/>}
 		</div>
