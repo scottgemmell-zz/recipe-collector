@@ -8,7 +8,7 @@ export const slice = createSlice({
   reducers: {
     addItem: (state, action) => {
 		// console.log({ a: state.value, b: +action.payload });
-    	state.value.push(+action.payload);
+    	state.value.indexOf(+action.payload) === -1 && state.value.push(+action.payload);
 	},
 	removeItem: (state, action) => {
 		// console.log({ a: state.value, b: +action.payload });
