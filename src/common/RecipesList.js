@@ -4,8 +4,8 @@ import RecipesThumb from "./RecipesThumb";
 const RecipesList = ({ handleFavourite, isLoading, list, myFavourites }) => {
 	return (
 		<ul className="list">
-			{list.map((item, idx) => (<RecipesThumb 
-				key={idx} 
+			{list.map(item => (<RecipesThumb 
+				key={item.idMeal} 
 				{...item} 
 				isFav={myFavourites.includes(+item.idMeal)}
 				handleFavourite={handleFavourite} 
