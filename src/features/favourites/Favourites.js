@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import {
 	toggleFavourite,
-  	selectCollection,
-} from './collectionSlice';
+  	selectFavourites,
+} from './favouritesSlice';
 import RecipesList from "../../common/RecipesList";
 
 const fetchByMealId = mealId => fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
@@ -12,9 +12,9 @@ const fetchByMealId = mealId => fetch(`https://www.themealdb.com/api/json/v1/1/l
 
 const fetchFavouriteMeals = meals => meals.map(mealId => fetchByMealId(mealId));
 
-const Collection = () => {
+const Favourites = () => {
 
-	const myFavourites = useSelector(selectCollection);
+	const myFavourites = useSelector(selectFavourites);
   	const dispatch = useDispatch();
 
 	const [recipeResource, setRecipeResource] = useState([]);
@@ -40,7 +40,7 @@ const Collection = () => {
     <div className="App-main">
 		<div className="App-inner">
 			<h1>
-				My Collection
+				My Favourites
 			</h1>
 			
 			{isLoading && <div>Loading...</div>}
@@ -55,4 +55,4 @@ const Collection = () => {
   );
 }
 
-export default Collection;
+export default Favourites;

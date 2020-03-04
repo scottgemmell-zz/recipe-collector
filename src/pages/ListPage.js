@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import {
 	toggleFavourite,
-	selectCollection,
-} from '../features/collection/collectionSlice';
+	selectFavourites,
+} from '../features/favourites/favouritesSlice';
 import RecipesList from "../common/RecipesList";
 
 const ListPage = () => {
 
-	const myFavourites = useSelector(selectCollection);
+	const myFavourites = useSelector(selectFavourites);
 	const dispatch = useDispatch();
 	const [recipeResource, setRecipeResource] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);

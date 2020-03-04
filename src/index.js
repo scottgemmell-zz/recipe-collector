@@ -8,7 +8,7 @@ import * as serviceWorker from './serviceWorker';
 import ListPage from './pages/ListPage';
 import SiteHeader from './common/SiteHeader';
 import ExamplePage from './pages/ExamplePage';
-import Collection from './features/collection/Collection';
+import Favourites from './features/favourites/Favourites';
 import ItemPage from './pages/ItemPage';
 
 ReactDOM.render(
@@ -20,8 +20,8 @@ ReactDOM.render(
 					{/* <Route path="/list/">
 						<ListPage />
 					</Route> */}
-					<Route path="/collection/">
-						<Collection />
+					<Route path="/favourites/">
+						<Favourites />
 					</Route>
 					<Route path="/example/">
 						<ExamplePage />

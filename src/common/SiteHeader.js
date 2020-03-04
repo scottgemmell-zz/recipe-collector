@@ -15,7 +15,7 @@ export default function SiteHeader() {
 				<nav className="App-nav">
 					<ul>
 						<li><Link to="/list/">List</Link></li>
-						<li><Link to="/collection/">Collection</Link></li>
+						<li><Link to="/favourites/">Favourites</Link></li>
 						<li><Link to="/example/">Example</Link></li>
 					</ul>
 				</nav>
