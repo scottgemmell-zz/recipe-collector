@@ -24,7 +24,7 @@ const RecipesThumb = ({ idMeal, isFav, isLoading, strMealThumb, strMeal, handleF
 					<button className="thumb__toggle" onClick={() => handleFavourite({ idMeal })}>
 						{isFav ? <FaHeart /> : <FaRegHeart />} 
 						<span className="u-visually-hidden">
-						{isFav ? "Add to" : "Remove from"} favourites
+						{isFav ? " Add to" : " Remove from"} favourites
 						</span>
 					</button> 
 				</span>

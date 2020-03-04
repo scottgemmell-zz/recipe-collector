@@ -162,6 +162,11 @@ body {
 	  margin: 10px;
 	  border: 5px solid #fff;
 
+	  a {
+		  color: #704cb6;
+		  text-decoration: none;
+	  }
+
 	  .thumb__img {
 		// margin-right: 20px;
 		max-width: 100%;
@@ -171,14 +176,22 @@ body {
 		object-fit: cover;
 	}
 	.thumb__meta {
-		padding: 20px;
+		padding: 14px 10px 10px 10px;
 		display: flex;
 		flex-direction: row;
 		justify-content: flex-start;
-		align-items: flex-start;
-		//height: 100%;
+		// align-items: flex-start;
+		// height: 100%;
 		text-align: left;
+		//width: 100%;
 
+		a {
+			order: 2;
+		}
+
+		button {
+			order: 1;
+		}
 		
 	}
 	button {
@@ -186,6 +199,12 @@ body {
 		font-size: 20px;
 		padding: 0;
 		margin-left: 6px;
+		margin-right: 6px;
+		color: #704cb6;
+
+		&:focus {
+			outline: 0;
+		}
 	}
   }
   
