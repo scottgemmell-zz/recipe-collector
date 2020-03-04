@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from 'react-redux';
-import {
-	toggleFavourite,
-	selectFavourites,
-} from '../features/favourites/favouritesSlice';
+import { useSelector, useDispatch } from "react-redux";
+import { selectFavourites, toggleFavourite } from "../features/favourites/favouritesSlice";
 import { RecipesList, Spinner } from "../common/";
 
 const ListPage = () => {

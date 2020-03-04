@@ -1,10 +1,10 @@
 import React from 'react';
-import RecipesThumb from "./RecipesThumb";
+import FavouritesThumb from "./FavouritesThumb";
 
-const RecipesList = ({ handleFavourite, isLoading, list, myFavourites }) => {
+const FavouritesList = ({ handleFavourite, isLoading, list, myFavourites }) => {
 	return (
 		<ul className="list">
-			{list.map((item, idx) => (<RecipesThumb 
+			{list.map((item, idx) => (<FavouritesThumb 
 				key={idx} 
 				{...item} 
 				isFav={myFavourites.includes(+item.idMeal)}
@@ -16,4 +16,4 @@ const RecipesList = ({ handleFavourite, isLoading, list, myFavourites }) => {
 	);
 }
 
-export default RecipesList;
+export default FavouritesList;

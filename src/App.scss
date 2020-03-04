@@ -23,6 +23,15 @@ $color-bg: #282c34;
 	display: none;
 }
 
+%u-spinner,
+.u-spinner {
+	// height: 100vh;
+	// width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 body {
 	background-color: #f0f0f0;
 	margin: 0;

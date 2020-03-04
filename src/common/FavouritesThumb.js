@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 import { Spinner } from "../common";
 
-const RecipesThumb = ({ idMeal, isFav, isLoading, strMealThumb, strMeal, handleFavourite }) => {
+const FavouritesThumb = ({ idMeal, isFav, isLoading, strMealThumb, strMeal, handleFavourite }) => {
 
   return (
     <React.Fragment>
@@ -18,7 +18,7 @@ const RecipesThumb = ({ idMeal, isFav, isLoading, strMealThumb, strMeal, handleF
 					alt={strMeal} 
 				/> 
 				<span className="thumb__meta">
-					<Link className="thumb__title" to={`/item/${idMeal}/`}>
+					Fav: <Link className="thumb__title" to={`/item/${idMeal}/`}>
 						{strMeal}
 					</Link> 
 					<button className="thumb__toggle" onClick={() => handleFavourite({ idMeal })}>
@@ -33,4 +33,4 @@ const RecipesThumb = ({ idMeal, isFav, isLoading, strMealThumb, strMeal, handleF
   );
 }
 
-export default RecipesThumb;
+export default FavouritesThumb;
