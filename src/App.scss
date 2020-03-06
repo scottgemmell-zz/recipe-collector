@@ -243,3 +243,31 @@ body {
 		  margin-right: 20px;
 	  }
   }
+
+  .cta {
+	  border: 2px solid #704cb6;
+	  border-radius: 5px;
+	  background: none;
+	  padding: 14px 12px;
+	  font-size: 16px;
+	  //display: flex;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  width: 100%;
+	  font-weight: bold;
+	  color: #704cb6;
+
+
+	  &:focus {
+		  outline: none;
+	  }
+
+	  svg {
+		font-size: 24px;
+	  }
+
+	  span {
+		  margin-left: 6px;
+	  }
+  }

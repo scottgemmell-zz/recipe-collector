@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { selectFavourites, toggleFavourite } from "../features/favourites/favouritesSlice";
 import { Spinner } from "../common/";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 const fetchByMealId = mealId => fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
 	.then(res => res.json())
@@ -79,7 +80,14 @@ const ItemPage = () => {
 						<div className="item__thumb">
 							<img src={recipe.strMealThumb} height={300} width={300} alt=""/>
 							<p>
-								<button onClick={() => handleFavourite({ idMeal: +recipe.idMeal })}>{!isFav ? " Add to" : " Remove from"} favourites </button>
+								<button 
+									className="cta"
+									onClick={() => handleFavourite({ idMeal: +recipe.idMeal })}
+								>
+									{!isFav 
+										? <Fragment><FaHeart /> <span>Add to favourites</span></Fragment> 
+										: <Fragment><FaRegHeart /> <span>Remove from favourites</span></Fragment>} 
+								</button>
 							</p>
 						</div>
 					</div>}
