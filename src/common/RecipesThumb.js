@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { Spinner } from "../common";
@@ -18,14 +18,23 @@ const RecipesThumb = ({ idMeal, isFav, isLoading, strMealThumb, strMeal, handleF
 					alt={strMeal} 
 				/> 
 				<span className="thumb__meta">
-					<Link className="thumb__title" to={`/recipe/${idMeal}/`}>
+					<Link 
+						className="thumb__title" 
+						to={`/recipe/${idMeal}/`}
+					>
 						{strMeal}
 					</Link> 
-					<button className="thumb__toggle" onClick={() => handleFavourite({ idMeal })}>
-						{isFav ? <FaHeart /> : <FaRegHeart />} 
-						<span className="u-visually-hidden">
-						{isFav ? " Add to" : " Remove from"} favourites
-						</span>
+					<button 
+						className="thumb__toggle" 
+						onClick={() => handleFavourite({ idMeal })}
+					>
+						{isFav 
+							? <Fragment>
+								<FaHeart /> <span className="u-visually-hidden">Add to favourites</span>
+							</Fragment> 
+							: <Fragment>
+								<FaRegHeart /> <span className="u-visually-hidden">Remove from favourites</span>
+							</Fragment>} 
 					</button> 
 				</span>
 			</li>}

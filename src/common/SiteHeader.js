@@ -11,7 +11,7 @@ export default function SiteHeader() {
 		<header className="App-header">
 			<div className="App-inner">
 				<div className="App-logo">
-					<img src={logo} alt="logo" />
+					<img src={logo} width={100} height={100} alt="logo" />
 					<h1>
 						<Link to="/">Recipes Collector</Link>
 					</h1>
