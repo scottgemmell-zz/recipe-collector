@@ -10,14 +10,7 @@ const RecipesThumb = ({ idMeal, isFav, isLoading, strMealThumb, strMeal, handleF
 		{isLoading 
 			? <Spinner /> 
 			: <li className="thumb">
-				<img 
-					className="thumb__img" 
-					src={strMealThumb} 
-					width={240} 
-					height={240} 
-					alt={strMeal} 
-				/> 
-				<span className="thumb__meta">
+				<div className="thumb__meta">
 					<Link 
 						className="thumb__title" 
 						to={`/recipe/${idMeal}/`}
@@ -36,7 +29,14 @@ const RecipesThumb = ({ idMeal, isFav, isLoading, strMealThumb, strMeal, handleF
 								<FaRegHeart /> <span className="u-visually-hidden">Remove from favourites</span>
 							</Fragment>} 
 					</button> 
-				</span>
+				</div>
+				<img 
+					className="thumb__img" 
+					src={strMealThumb} 
+					width={240} 
+					height={240} 
+					alt={strMeal} 
+				/> 
 			</li>}
 	</React.Fragment>
   );

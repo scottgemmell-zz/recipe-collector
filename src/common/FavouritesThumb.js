@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectFavourites, toggleFavourite } from "../features/favourites/favouritesSlice";
 import { Link } from "react-router-dom";
@@ -40,6 +40,23 @@ const FavouritesThumb = ({ idx }) => {
 			{isLoading 
 				? <Spinner /> 
 				: <li className="thumb">
+					<div className="thumb__meta">
+						<Link className="thumb__title" to={`/recipe/${idx}/`}>
+							{recipeResource.strMeal}
+						</Link> 
+						<button 
+							className="thumb__toggle" 
+							onClick={() => handleFavourite({ idMeal: +idx })}
+						>
+						{isFav 
+							? <Fragment>
+								<FaHeart /> <span className="u-visually-hidden">Add to favourites</span>
+							</Fragment> 
+							: <Fragment>
+								<FaRegHeart /> <span className="u-visually-hidden">Remove from favourites</span>
+							</Fragment>} 
+						</button> 
+					</div>
 					<img 
 						className="thumb__img" 
 						src={recipeResource.strMealThumb} 
@@ -47,17 +64,6 @@ const FavouritesThumb = ({ idx }) => {
 						height={240} 
 						alt={recipeResource.strMeal} 
 					/> 
-					<span className="thumb__meta">
-						<Link className="thumb__title" to={`/recipe/${idx}/`}>
-							{recipeResource.strMeal}
-						</Link> 
-						<button className="thumb__toggle" onClick={() => handleFavourite({ idMeal: +idx })}>
-							{isFav ? <FaHeart /> : <FaRegHeart />} 
-							<span className="u-visually-hidden">
-							{isFav ? " Add to" : " Remove from"} favourites
-							</span>
-						</button> 
-					</span>
 				</li>}
 		</React.Fragment>
 	);
