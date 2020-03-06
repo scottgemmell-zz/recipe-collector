@@ -11,26 +11,24 @@ import Favourites from "./features/favourites/Favourites";
 ReactDOM.render(
 	<Provider store={store}>
 		<Router>
-			<div className="App">
-				<SiteHeader />
-				<Switch>
-					{/* <Route path="/list/">
-						<ListPage />
-					</Route> */}
-					<Route path="/favourites/">
-						<Favourites />
-					</Route>
-					<Route path="/example/">
-						<ExamplePage />
-					</Route>
-					<Route path={"/recipe/:mealId/"}>
-						<ItemPage />
-					</Route>
-					<Route path={["/", "/list/"]}>
-						<ListPage />
-					</Route>
-				</Switch>
-			</div>
+			<SiteHeader />
+			<Switch>
+				{/* <Route path="/list/">
+					<ListPage />
+				</Route> */}
+				<Route path="/favourites/">
+					<Favourites />
+				</Route>
+				<Route path="/example/">
+					<ExamplePage />
+				</Route>
+				<Route path={"/recipe/:mealId/"}>
+					<ItemPage />
+				</Route>
+				<Route path={["/", "/list/"]}>
+					<ListPage />
+				</Route>
+			</Switch>
 		</Router>
 	</Provider>,
   document.getElementById('root')

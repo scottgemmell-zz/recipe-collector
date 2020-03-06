@@ -4,19 +4,20 @@ import { useSelector } from "react-redux";
 import { selectFavourites } from "../features/favourites/favouritesSlice";
 import { FaHeart } from "react-icons/fa";
 import logo from '../logo.svg';
+import "./SiteHeader.scss";
 
 export default function SiteHeader() {
 	const myFavourites = useSelector(selectFavourites);
 	return (
-		<header className="App-header">
-			<div className="App-inner">
-				<div className="App-logo">
-					<img src={logo} width={100} height={100} alt="logo" />
+		<header className="Site-header">
+			<div className="Site-header__inner">
+				<div className="Site-logo">
+					<img src={logo} width={70} height={70} alt="logo" />
 					<h1>
 						<Link to="/">Recipes Collector</Link>
 					</h1>
 				</div>
-				<nav className="App-nav">
+				<nav className="Site-nav">
 					<ul>
 						<li>
 							<Link to="/list/">All recipes</Link>
