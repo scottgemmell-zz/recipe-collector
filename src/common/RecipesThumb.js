@@ -30,13 +30,14 @@ const RecipesThumb = ({ idMeal, isFav, isLoading, strMealThumb, strMeal, handleF
 							</Fragment>} 
 					</button> 
 				</div>
-				<img 
-					className="thumb__img" 
-					src={strMealThumb} 
-					width={240} 
-					height={240} 
-					alt={strMeal} 
-				/> 
+				<div className="thumb__img">
+					<img 
+						src={strMealThumb} 
+						width={320} 
+						height={320} 
+						alt={strMeal} 
+					/> 
+				</div>
 			</li>}
 	</React.Fragment>
   );

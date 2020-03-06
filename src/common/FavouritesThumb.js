@@ -57,13 +57,14 @@ const FavouritesThumb = ({ idx }) => {
 							</Fragment>} 
 						</button> 
 					</div>
-					<img 
-						className="thumb__img" 
-						src={recipeResource.strMealThumb} 
-						width={240} 
-						height={240} 
-						alt={recipeResource.strMeal} 
-					/> 
+					<div className="thumb__img">
+						<img 
+							src={recipeResource.strMealThumb} 
+							width={320} 
+							height={320} 
+							alt={recipeResource.strMeal} 
+						/> 
+					</div>
 				</li>}
 		</React.Fragment>
 	);

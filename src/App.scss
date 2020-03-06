@@ -63,7 +63,7 @@ dd {
 
 .list {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr;
 	margin: 0 -10px;
 	padding: 0;
 
@@ -83,16 +83,25 @@ dd {
 .thumb {
 	background-color: #fff;
 	display: flex;
-	justify-content: flex-start;
+	justify-content: flex-end;
 	align-items: center;
 	flex-direction: column-reverse;
 	margin: 10px;
 	border: 5px solid #fff;
 
 	.thumb__img {
-		max-width: 100%;
+		width:100%;
+    	max-height:100vw;
 		display: block;
-		object-fit: cover;
+		//object-fit: cover;
+		img {
+			max-width:100%;
+			max-height:100%;
+			width:auto;
+			height:auto;
+			display:block;
+			margin:0 auto;
+		}
 	}
 
 	.thumb__meta {
