@@ -8,8 +8,8 @@ export const slice = createSlice({
   reducers: {
     toggleFavourite: (state, action) => {
 		//console.log({ state, action, value: +action.payload });
-		const favouriteIndex = state.value.indexOf(+action.payload);
-    	favouriteIndex === -1 ? state.value.push(+action.payload) : state.value.splice(favouriteIndex, 1);
+		const hasFavourite = state.value.indexOf(+action.payload);
+    	hasFavourite === -1 ? state.value.push(+action.payload) : state.value.splice(hasFavourite, 1);
 	},
   },
 });
