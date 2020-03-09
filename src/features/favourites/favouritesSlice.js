@@ -13,7 +13,6 @@ export const slice = createSlice({
 			? state.value.push(+action.payload) 
 			: state.value.splice(hasFavourite, 1);
 		window.localStorage.setItem("favourites", JSON.stringify(state.value));
-		
 	},
   },
 });
