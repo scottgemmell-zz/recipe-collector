@@ -16,15 +16,15 @@ $color-bg: #282c34;
 
 		max-width: 800px;
 		margin: 0 auto;
-		border-bottom: 10px solid red;
+		border-bottom: 6px solid red;
 
 		@include respond-to('small') {
-			border-bottom: 10px solid green;
+			border-bottom-color: green;
 			
 		}
 		
 		@include respond-to('medium') {
-			border-bottom: 10px solid purple;
+			border-bottom-color: #666;
 
 			text-align: left;
 			display: flex;
@@ -34,9 +34,15 @@ $color-bg: #282c34;
 		}
 		
 		@include respond-to('large') {
-			border-bottom: 10px solid yellow;
+			border-bottom-color: yellow;
 		}
 	}
+}
+
+.App-main .App-inner {
+	border-top: 6px solid #ccc;
+	padding-left: 0;
+	padding-right: 0;
 }
 
 .Site-logo {
