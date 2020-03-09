@@ -1,3 +1,4 @@
+import React from "react";
 import { createSlice } from "@reduxjs/toolkit";
 
 export const slice = createSlice({
@@ -8,8 +9,8 @@ export const slice = createSlice({
   reducers: {
     toggleFavourite: (state, action) => {
 		//console.log({ state, action, value: +action.payload });
-		const index = state.value.indexOf(+action.payload);
-    	index === -1 ? state.value.push(+action.payload) : state.value.splice(index, 1);;
+		const favouriteIndex = state.value.indexOf(+action.payload);
+    	favouriteIndex === -1 ? state.value.push(+action.payload) : state.value.splice(favouriteIndex, 1);;
 	},
   },
 });
