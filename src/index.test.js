@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+//import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
 import { SiteHeader } from "../src/common";

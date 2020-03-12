@@ -5,7 +5,7 @@ import "./App.scss";
 import store from "./store";
 import { Provider } from "react-redux";
 import { ExamplePage, ItemPage, ListPage } from "./pages/";
-import SiteHeader from "./common/SiteHeader";
+import { SiteHeader } from "./common/";
 import Favourites from "./features/favourites/Favourites";
 
 ReactDOM.render(

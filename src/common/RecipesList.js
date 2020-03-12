@@ -1,7 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 import RecipesThumb from "./RecipesThumb";
 
-const RecipesList = ({ handleFavourite, isLoading, list, myFavourites }) => {
+const RecipesList = ({ handleFavourite, list, myFavourites }) => {
 	return (
 		<ul className="list">
 			{list.map(item => (<RecipesThumb 
@@ -9,11 +10,16 @@ const RecipesList = ({ handleFavourite, isLoading, list, myFavourites }) => {
 				{...item} 
 				isFav={myFavourites.includes(+item.idMeal)}
 				handleFavourite={handleFavourite} 
-				//isLoading={true}
 			/>)
 			)}
 		</ul>
 	);
+};
+
+RecipesList.propTypes = {
+	handleFavourite: PropTypes.func.isRequired, 
+	list: PropTypes.array.isRequired, 
+	myFavourites: PropTypes.array.isRequired,
 };
 
 export default RecipesList;

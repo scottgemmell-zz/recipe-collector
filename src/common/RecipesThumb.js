@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { Spinner } from "../common";
@@ -41,6 +42,15 @@ const RecipesThumb = ({ idMeal, isFav, isLoading, strMealThumb, strMeal, handleF
 				</li>}
 		</React.Fragment>
 	);
+};
+
+RecipesThumb.propTypes = {
+	idMeal: PropTypes.string.isRequired,
+	isFav: PropTypes.bool.isRequired, 
+	isLoading: PropTypes.bool.isRequired, 
+	strMealThumb: PropTypes.string.isRequired, 
+	strMeal: PropTypes.string.isRequired, 
+	handleFavourite: PropTypes.func.isRequired,
 };
 
 export default RecipesThumb;

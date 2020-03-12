@@ -21,8 +21,8 @@ const ListPage = () => {
 			.then((data) => {
 				setRecipeResource(data.meals);
 				setIsLoading(false);
-			})
-			.catch(err => console.log(err));
+			});
+		//.catch(err => console.log(err));
 		// return () => {
 		// 	cleanup
 		// };

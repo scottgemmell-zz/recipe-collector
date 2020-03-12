@@ -37,7 +37,7 @@ const ItemPage = () => {
 		dispatch(toggleFavourite(e.idMeal));
 	};
 
-	const recipe = recipeResource[0];
+	const [recipe] = recipeResource;
 	const isFav = recipe && myFavourites.includes(+recipe.idMeal);
 
 	return (

@@ -8,7 +8,7 @@ const Favourites = () => {
 	const myFavourites = useSelector(selectFavourites);
 	//console.log("<Favourites />", myFavourites);
 	
-  	return (
+	return (
 		<div className="App-main">
 			<div className="App-inner">
 				<h1>
@@ -20,7 +20,7 @@ const Favourites = () => {
 				</ul>
 			</div>
 		</div>
-  	);
-}
+	);
+};
 
 export default Favourites;

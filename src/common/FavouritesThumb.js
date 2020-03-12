@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { useSelector, useDispatch } from "react-redux";
 import { selectFavourites, toggleFavourite } from "../features/favourites/favouritesSlice";
 import { Link } from "react-router-dom";
@@ -8,7 +9,7 @@ import { Spinner } from "../common";
 const FavouritesThumb = ({ idx }) => {
 
 	const myFavourites = useSelector(selectFavourites);
-  	const dispatch = useDispatch();
+	const dispatch = useDispatch();
 	const [recipeResource, setRecipeResource] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
 	const isFav = myFavourites.includes(+idx);
@@ -68,6 +69,10 @@ const FavouritesThumb = ({ idx }) => {
 				</li>}
 		</React.Fragment>
 	);
+};
+
+FavouritesThumb.propTypes = {
+	idx: PropTypes.string.isRequired, 
 };
 
 export default FavouritesThumb;
