@@ -3,10 +3,10 @@ import { createSlice } from "@reduxjs/toolkit";
 export const slice = createSlice({
 	name: "favourites",
 	initialState: {
-    	value: JSON.parse(window.localStorage.getItem("favourites")),
+		value: JSON.parse(window.localStorage.getItem("favourites")),
 	},
 	reducers: {
-    	toggleFavourite: (state, action) => {
+		toggleFavourite: (state, action) => {
 			//console.log({ state, action, value: +action.payload });
 			const hasFavourite = state.value.indexOf(+action.payload);
 			hasFavourite === -1 

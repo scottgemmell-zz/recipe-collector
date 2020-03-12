@@ -8,9 +8,9 @@ const logger = createLogger({
 });
 
 export default configureStore({
-  reducer: {
-	counter: counterReducer,
-	favourites: favouritesReducer,
-  },
-  middleware: [...getDefaultMiddleware(), logger],
+	reducer: {
+		counter: counterReducer,
+		favourites: favouritesReducer,
+	},
+	middleware: [...getDefaultMiddleware(), logger],
 });
