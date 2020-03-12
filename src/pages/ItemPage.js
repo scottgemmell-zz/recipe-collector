@@ -7,8 +7,8 @@ import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 const fetchByMealId = mealId => fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
 	.then(res => res.json())
-	.then(data => { 
-		return data.meals[0]
+	.then((data) => { 
+		return data.meals[0];
 	});
 
 const fetchFavouriteMeals = meals => meals.map(mealId => fetchByMealId(mealId));
@@ -19,23 +19,23 @@ const ItemPage = () => {
 	const dispatch = useDispatch();
 	const [recipeResource, setRecipeResource] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
-	let { mealId } = useParams();
+	const { mealId } = useParams();
 
 	useEffect(() => {
 		//console.log("STARTUP");
 		Promise
-		.all(fetchFavouriteMeals([+mealId]))
-		.then(data => {
+			.all(fetchFavouriteMeals([+mealId]))
+			.then((data) => {
 			//console.log("DATA", data)
-			setRecipeResource(data);
-			setIsLoading(false)
-		})
+				setRecipeResource(data);
+				setIsLoading(false);
+			});
 	}, [mealId]);
 
-	const handleFavourite = e => {
+	const handleFavourite = (e) => {
 		//console.log("handleFavourite", e);
 		dispatch(toggleFavourite(e.idMeal));
-	}
+	};
 
 	const recipe = recipeResource[0];
 	const isFav = recipe && myFavourites.includes(+recipe.idMeal);
@@ -94,6 +94,6 @@ const ItemPage = () => {
 			</div>
 		</div>
 	);
-}
+};
 
 export default ItemPage;

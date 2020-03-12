@@ -14,6 +14,6 @@ const FavouritesList = ({ handleFavourite, isLoading, list, myFavourites }) => {
 			)}
 		</ul>
 	);
-}
+};
 
 export default FavouritesList;

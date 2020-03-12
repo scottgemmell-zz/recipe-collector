@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectFavourites } from "../features/favourites/favouritesSlice";
 import { FaHeart } from "react-icons/fa";
-import logo from '../logo.svg';
+import logo from "../logo.svg";
 import "./SiteHeader.scss";
 
 export default function SiteHeader() {
@@ -32,5 +32,5 @@ export default function SiteHeader() {
 				</nav>
 			</div>
 		</header>
-	)
+	);
 }

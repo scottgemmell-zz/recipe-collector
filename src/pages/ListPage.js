@@ -4,7 +4,6 @@ import { selectFavourites, toggleFavourite } from "../features/favourites/favour
 import { RecipesList, Spinner } from "../common/";
 
 const ListPage = () => {
-
 	const myFavourites = useSelector(selectFavourites);
 	const dispatch = useDispatch();
 	const [recipeResource, setRecipeResource] = useState([]);
@@ -19,7 +18,7 @@ const ListPage = () => {
 		// data.recipes
 		//fetch("https://api.spoonacular.com/recipes/random?number=20&tags=vegetarian&apiKey=3fcd89c737204c9d9e588415088e7b96")
 			.then(res => res.json())
-			.then(data => {
+			.then((data) => {
 				setRecipeResource(data.meals);
 				setIsLoading(false);
 			})
@@ -29,28 +28,28 @@ const ListPage = () => {
 		// };
 	}, []);
 
-	const handleFavourite = e => {
+	const handleFavourite = (e) => {
 		//console.log("handleFavourite", e);
 		dispatch(toggleFavourite(e.idMeal));
-	}
+	};
 
-  return (
-    <div className="App-main">
-		<div className="App-inner">
-			<h1>
-				Random
-			</h1>
-			
-			{isLoading && <Spinner />}
+	return (
+		<div className="App-main">
+			<div className="App-inner">
+				<h1>
+					Random
+				</h1>
+				
+				{isLoading && <Spinner />}
 
-			{recipeResource && <RecipesList 
-				list={recipeResource} 
-				handleFavourite={handleFavourite}
-				myFavourites={myFavourites}
-			/>}
+				{recipeResource && <RecipesList 
+					list={recipeResource} 
+					handleFavourite={handleFavourite}
+					myFavourites={myFavourites}
+				/>}
+			</div>
 		</div>
-    </div>
-  );
-}
+	);
+};
 
 export default ListPage;

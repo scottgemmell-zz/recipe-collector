@@ -55,5 +55,5 @@ export default function CounterPage() {
 				</span>
 			</div>
 		</div>
-	)
+	);
 }

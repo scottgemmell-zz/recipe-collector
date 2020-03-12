@@ -14,6 +14,6 @@ const RecipesList = ({ handleFavourite, isLoading, list, myFavourites }) => {
 			)}
 		</ul>
 	);
-}
+};
 
 export default RecipesList;
