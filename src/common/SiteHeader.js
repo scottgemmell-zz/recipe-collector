@@ -6,7 +6,7 @@ import { FaHeart } from "react-icons/fa";
 import logo from "../logo.svg";
 import "./SiteHeader.scss";
 
-export default function SiteHeader() {
+export const SiteHeader = () => {
 	const myFavourites = useSelector(selectFavourites);
 	return (
 		<header className="Site-header">
@@ -23,7 +23,10 @@ export default function SiteHeader() {
 							<Link to="/list/">All recipes</Link>
 						</li>
 						<li>
-							<Link className="total" to="/favourites/"><FaHeart /></Link> <span>{myFavourites.length}</span>
+							<Link className="total" to="/favourites/">
+								<FaHeart />
+							</Link> 
+							<span>{myFavourites.length}</span>
 						</li>
 						{/* <li>
 							<Link to="/example/">Example</Link>
@@ -34,3 +37,5 @@ export default function SiteHeader() {
 		</header>
 	);
 }
+
+export default SiteHeader;
