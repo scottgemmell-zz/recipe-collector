@@ -18,7 +18,7 @@ const FavouritesList = ({ handleFavourite, list, myFavourites }) => {
 
 FavouritesList.propTypes = {
 	handleFavourite: PropTypes.func.isRequired, 
-	list: PropTypes.object.isRequired, 
+	list: PropTypes.array.isRequired, 
 	myFavourites: PropTypes.array,
 };
 
