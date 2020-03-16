@@ -72,7 +72,7 @@ const FavouritesThumb = ({ idx }) => {
 };
 
 FavouritesThumb.propTypes = {
-	idx: PropTypes.string.isRequired, 
+	idx: PropTypes.number.isRequired, 
 };
 
 export default FavouritesThumb;
