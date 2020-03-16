@@ -8,6 +8,7 @@ const ListPage = () => {
 	const dispatch = useDispatch();
 	const [recipeResource, setRecipeResource] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
+	const [hasError, setHasError] = useState(false);
 
 	useEffect(() => {
 		window.localStorage.setItem("favourites", JSON.stringify(myFavourites));
@@ -21,8 +22,12 @@ const ListPage = () => {
 			.then((data) => {
 				setRecipeResource(data.meals);
 				setIsLoading(false);
+			})
+			.catch((err) => {
+				setHasError(true);
+				setIsLoading(false);
+				//console.log(err);
 			});
-		//.catch(err => console.log(err));
 		// return () => {
 		// 	cleanup
 		// };
@@ -40,6 +45,8 @@ const ListPage = () => {
 					Random
 				</h1>
 				
+				{hasError && <div>:(</div>}
+
 				{isLoading && <Spinner />}
 
 				{recipeResource && <RecipesList 
