@@ -15,6 +15,7 @@ const fetchFavouriteMeals = meals => meals.map(mealId => fetchByMealId(mealId));
 
 const ItemPage = () => {
 
+	// Nothing
 	const myFavourites = useSelector(selectFavourites);
 	const dispatch = useDispatch();
 	const [recipeResource, setRecipeResource] = useState([]);
