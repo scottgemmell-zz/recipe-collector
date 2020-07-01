@@ -85,8 +85,8 @@ const ItemPage = () => {
 									onClick={() => handleFavourite({ idMeal: +recipe.idMeal })}
 								>
 									{!isFav 
-										? <Fragment><FaHeart /> <span>Add to favourites</span></Fragment> 
-										: <Fragment><FaRegHeart /> <span>Remove from favourites</span></Fragment>} 
+										? <Fragment><FaRegHeart /> <span>Add to favourites</span></Fragment> 
+										: <Fragment><FaHeart /> <span>Remove from favourites</span></Fragment>} 
 								</button>
 							</p>
 						</div>
