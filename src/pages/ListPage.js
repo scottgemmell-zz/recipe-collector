@@ -23,9 +23,10 @@ const ListPage = () => {
 				setRecipeResource(data.meals);
 				setIsLoading(false);
 			})
-			.catch((err) => {
+			.catch(() => {
 				setHasError(true);
 				setIsLoading(false);
+				// err
 				//console.log(err);
 			});
 		// return () => {
